@@ -1,12 +1,11 @@
- import React, { useState} from 'react';
- import "./List.scss";
+import React, { useState} from 'react';
+import "./List.scss";
 import useInfiniteScroll from './useInfiniteScroll';
 
  const List = () => {
     const [listItems, setListItems] = useState(Array.from(Array(30).keys(), n => n + 1));
     //const [isFetching, setIsFetching] = useState(false);
     const [isFetching, setIsFetching] = useInfiniteScroll(fetchMoreListItems);
-
 
     // useEffect(() => {
     //     window.addEventListener('scroll', handleScroll);
