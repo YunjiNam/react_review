@@ -1,0 +1,38 @@
+.list-wrap {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .list-group {
+
+        width: 500px;
+        margin: 30px 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        border: 1px solid #bbbbbb;
+
+        .list-group-item {
+            width: 100%;
+            padding: 15px 30px;
+            border-bottom: 1px solid #bbbbbb;
+
+            text-align: center;
+
+            &:hover {
+                background-color: #999999;
+            }
+        }
+
+        .last {
+            border-bottom: none;
+        }
+    }
+}
