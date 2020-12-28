@@ -2,6 +2,7 @@ import React from 'react';
 //import List from './List';
 import Hello from "./Hello";
 import Wrapper from './Wrapper';
+import Counter from './Counter';
 
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
           <Hello name="react" color="red" isSpecial={true}/>
           <Hello color="blue"/>
           <Hello name="react" color="red" isSpecial/>
+          <Counter />
         </Wrapper>
       </div>
     </div>
