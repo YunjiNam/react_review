@@ -20,7 +20,11 @@ function Counter() {
     // }
 
     const buttonHandler = (action) => {
-        action === 'increase' ? setNumber(prevNumber => prevNumber + 1) : action === 'decrease' ? setNumber(prevNumber => prevNumber - 1) : setNumber(0);
+        action === 'increase' 
+            ? setNumber(prevNumber => prevNumber + 1) 
+            : action === 'decrease' 
+                ? setNumber(prevNumber => prevNumber - 1) 
+                : setNumber(0);
     }
 
     return (
