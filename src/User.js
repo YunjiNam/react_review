@@ -27,12 +27,13 @@ function User({ list, onRemove, onToggle }) {
             <b 
                 style={{ 
                     cursor: 'pointer', 
-                    color: list.active ? 'green' : 'black' 
+                    color: list.active ? 'green' : 'black' ,
+                    fontWeight: 'bold'
                 }} 
                 onClick={() => onToggle(list.id)}
             >
                 {list.username}
-            </b> 
+            </b>
             &nbsp;
             <span>({list.email})</span>
             &nbsp;
@@ -41,4 +42,4 @@ function User({ list, onRemove, onToggle }) {
     );
 }
 
-export default User;
+export default React.memo(User);
