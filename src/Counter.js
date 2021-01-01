@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
+
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'INCREMENT':
+            return state + 1;
+        case 'DECREMENT':
+            return state - 1;
+        default:
+            return state = 0;
+    }
+}
+
 
 function Counter() {
 
-    const [number, setNumber] = useState(0);
+    //const [number, setNumber] = useState(0);
+
+    const [number, dispatch] = useReducer(reducer, 0);
 
     // const onIncrease = () => {
     //     setNumber(number + 1);
@@ -19,13 +34,34 @@ function Counter() {
     //     console.log('reset');
     // }
 
+    // const buttonHandler = (action) => {
+    //     action === 'increase' 
+    //         ? setNumber(prevNumber => prevNumber + 1) 
+    //         : action === 'decrease' 
+    //             ? setNumber(prevNumber => prevNumber - 1) 
+    //             : setNumber(0);
+    // }
+
     const buttonHandler = (action) => {
         action === 'increase' 
-            ? setNumber(prevNumber => prevNumber + 1) 
+            ? dispatch({ type: 'INCREMENT' }) 
             : action === 'decrease' 
-                ? setNumber(prevNumber => prevNumber - 1) 
-                : setNumber(0);
+                ? dispatch({ type: 'DECREMENT' }) 
+                : dispatch({ type: 'RESET' });
     }
+
+    // useReducer 사용하기
+    // useReducer 는 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수이다
+    // function reducer(state, action) {
+    //     // 새로운 상태를 만드는 로직
+    //     // const nextState = ...
+    //     return nextState;
+    // }
+    // action 은 업데이트를 위한 정보를 가지고 있다
+    // 주로 type 값을 지닌 객체 형태로 사용
+    // const [state, dispatch] = useReducer(reducer, initialState);
+
+
 
     return (
         <div>
