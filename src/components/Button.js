@@ -102,7 +102,7 @@ const StyledButton = styled.button`
 
     /* 기타 */
     & + & {
-        margin-left: 1ren;
+        margin-left: 1rem;
     }
 
     ${fullWidthStyle}
