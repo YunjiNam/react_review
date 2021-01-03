@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { darken, lignten } from 'polished';
+import { darken, lighten } from 'polished';
 
 function Button({ children, color, size, outline, fullWidth, ...rest }) {
     return (
@@ -27,7 +27,7 @@ const colorStyles = css`
         return css`
             background: ${selected};
             &:hover {
-                background: ${lignten(0.1, selected)};
+                background: ${lighten(0.1, selected)};
             }
             &:active {
                 background: ${darken(0.1, selected)};
@@ -75,8 +75,8 @@ const fullWidthStyle = css`
             css`
                 width: 100%;
                 justify-content: center;
+                align-items: center;
                 & + & {
-                    margin-left: 0;
                     margin-top: 1rem;
                 }
             `}
@@ -84,7 +84,7 @@ const fullWidthStyle = css`
 
 const StyledButton = styled.button`
     /* 공통 스타일 */
-    display: inline-flex;
+    display: flex;
     outline: none;
     border: none;
     border-radius: 4px;
