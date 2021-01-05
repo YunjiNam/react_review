@@ -203,6 +203,7 @@ import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Button from './components/Button';
 import Dialog from './components/Dialog';
+import Dnd from './Dnd';
 
 function App() {
   const [dialog, setDialog] = useState(false);
@@ -266,6 +267,10 @@ function App() {
         >
          데이터를 정말로 삭제하시겠습니까?
         </Dialog>
+
+        <Dnd />
+
+
 
       </>
     </ThemeProvider>
