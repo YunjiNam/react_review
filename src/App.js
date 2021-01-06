@@ -204,6 +204,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Button from './components/Button';
 import Dialog from './components/Dialog';
 import Dnd from './Dnd';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [dialog, setDialog] = useState(false);
@@ -218,6 +219,12 @@ function App() {
     console.log('취소');
     setDialog(false);
   };
+
+  // 다국어 지원
+  const { t, i18n } = useTranslation();
+
+  const changelanguageToKo = () => i18n.changeLanguage('ko');
+  const changelanguageToEn = () => i18n.changeLanguage('en');
 
   return (
     <ThemeProvider
@@ -256,6 +263,17 @@ function App() {
               삭제
             </Button>
           </ButtonGroup>
+
+          <div>
+            <span>language : {i18n.language}</span>
+            <h1>{t('welcome')}</h1>
+            <Button size="large" color="pink" fullWidth onClick={changelanguageToKo}>
+              Korean
+            </Button>
+            <Button size="large" color="pink" fullWidth onClick={changelanguageToEn}>
+              English
+            </Button>
+          </div>
         </AppBlock>
         <Dialog
           title="정말로 삭제하시겠습니까?"
@@ -266,9 +284,9 @@ function App() {
           visible={dialog}
         >
          데이터를 정말로 삭제하시겠습니까?
-        </Dialog>
+        </Dialog> 
 
-        <Dnd />
+         <Dnd />
 
 
 
