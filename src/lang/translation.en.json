@@ -3,5 +3,8 @@
     "home": "Home",
     "main": "Main",
     "tipTitle": "How to Manage boards?",
-    "tipContents": "・ Only admin user can create new board. Staff and agent user are not allowed to create new board.\n・ When creating new board, you must select board manager who will be in charge of the board. Board manager can add or delete members and access all deal cards on the board."
+    "tipContents": [
+        "・ Only admin user can create new board. Staff and agent user are not allowed to create new board.",
+        "・ When creating new board, you must select board manager who will be in charge of the board. Board manager can add or delete members and access all deal cards on the board."
+    ]
 }

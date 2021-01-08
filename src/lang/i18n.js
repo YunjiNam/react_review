@@ -18,7 +18,10 @@ const resources = {
     .use(initReactI18next)
     .init({
         resources: resources,
-        lng: "ko",
+
+        // 브라우저 언어 정보 가져와서 적용
+        // userLanguage 는 IE 인 경우 적용
+        lng: `${navigator.language.toLocaleLowerCase().split('-')[0] || navigator.userLanguage.toLocaleLowerCase().split('-')[0]}`,
         debug: true,
         keySeparator: false,
     });

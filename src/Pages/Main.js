@@ -15,6 +15,10 @@ const Main = ({ history }) => {
 
     const changeLan = (ln) => {
         ln === 'ko' ? i18n.changeLanguage('ko') : i18n.changeLanguage('en'); 
+        
+        console.log(`ip 언어: ${navigator.language.toLocaleLowerCase().split('-')[0]}`);
+        console.log(`ip 언어2: ${navigator.userLanguage}`);
+        // console.log(`tipc: ${t('tipContents', { returnObjects: true })[0]}`);
     }
 
     return (
@@ -22,7 +26,7 @@ const Main = ({ history }) => {
             <div>
                 <h1>{t('main')}</h1>
                 <ul>
-                    {t('tipContents').split("\n").map((line, idx) => (<li key={idx}>{line}</li>))}
+                    {t('tipContents', { returnObjects: true }).map((line, idx) => (<li key={idx}>{line}</li>))}
                 </ul>
             </div>
             <ThemeProvider
